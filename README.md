@@ -1,6 +1,6 @@
 # Capitalist Ghost Theme
 
-A minimal ghost theme for a niche.;
+A minimal ghost theme for a niche.
 
 &nbsp;
 
