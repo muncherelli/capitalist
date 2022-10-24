@@ -9,25 +9,36 @@ production stylesheet in assets/built/screen.css using: gulp dev
 /* ---------------------------------------------------------- */
 
 /* Base components */
-@import "vars.css";
+/* @import "vars.css";
 @import "components/global.css";
 @import "components/forms.css";
-@import "components/buttons.css";
+@import "components/buttons.css"; */
 
 /* Ghost components */
-@import "ghost/header.css";
+/* @import "ghost/header.css";
 @import "ghost/content.css";
 @import "ghost/readmore.css";
 @import "ghost/members.css";
 @import "ghost/errors.css";
 @import "ghost/footer.css";
-@import "ghost/badge.css";
-
-
+@import "ghost/badge.css"; */
 
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */
 
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Chomsky;
+    src: url("../fonts/Chomsky.woff2") format("woff2"),
+        url("../fonts/Chomsky.woff") format("woff"),
+        url("../fonts/Chomsky.otf") format("opentype");
+}
+
+/* 
 html,
 .gh-viewport {
     display: flex;
@@ -78,12 +89,12 @@ html,
 
 .gh-head-actions a:last-child svg {
     height: 2rem;
-}
+} */
 
 /* Index
 /* ---------------------------------------------------------- */
 
-.gh-card:not(:first-child) {
+/* .gh-card:not(:first-child) {
     margin: 8vmin auto 0;
 }
 
@@ -127,13 +138,12 @@ html,
     font-weight: 500;
     box-shadow: 0 -1px 0 0 inset currentColor;
     opacity: 0.5;
-}
-
+} */
 
 /* Page
 /* ---------------------------------------------------------- */
 
-.gh-page-head {
+/* .gh-page-head {
     margin: 0 auto;
     padding: 8vmin 0 4vmin;
     text-align: center;
@@ -156,13 +166,12 @@ html,
     .gh-page-head > p {
         font-size: 1.6rem;
     }
-}
-
+} */
 
 /* Post
 /* ---------------------------------------------------------- */
 
-.gh-header {
+/* .gh-header {
     padding: 0 0 8vmin 0;
     text-align: center;
 }
@@ -188,13 +197,12 @@ html,
 
 .gh-post-footer {
     margin: 2rem 0;
-}
-
+} */
 
 /* Author Archive
 /* ---------------------------------------------------------- */
 
-.gh-author-image {
+/* .gh-author-image {
     height: 12vmin;
     width: 12vmin;
     margin: 0 auto 1.5em;
@@ -227,7 +235,7 @@ html,
     margin: 0 1.25vmin 0 0;
     height: 1em;
     width: 1px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     transform: rotate(20deg);
 }
 
@@ -235,4 +243,4 @@ html,
     .gh-author-meta {
         font-size: 1.6rem;
     }
-}
+} */
