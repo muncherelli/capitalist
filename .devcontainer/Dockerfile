@@ -5,8 +5,8 @@ FROM node:16-bullseye
 ENV NODE_ENV=development
 
 # create ghost install directory and install ghost cli
-RUN mkdir -p /srv/ghost && chown node:node /srv/ghost && npm install ghost-cli@latest -g
+RUN mkdir -p /srv/www/ghost && chown node:node /srv/www/ghost && npm install ghost-cli@latest -g
 
 # install ghost as node user
 USER node
-RUN cd /srv/ghost && ghost install local
+RUN cd /srv/www/ghost && ghost install local

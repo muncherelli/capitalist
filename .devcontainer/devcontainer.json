@@ -21,13 +21,13 @@
         }
     },
     "mounts": [
-        "source=${localWorkspaceFolder}/.devcontainer/devserver/data,target=/srv/ghost/content/data,type=bind,consistency=cached",
-        "source=${localWorkspaceFolder}/.devcontainer/devserver/files,target=/srv/ghost/content/files,type=bind,consistency=cached",
-        "source=${localWorkspaceFolder}/.devcontainer/devserver/images,target=/srv/ghost/content/images,type=bind,consistency=cached",
-        "source=${localWorkspaceFolder}/.devcontainer/devserver/media,target=/srv/ghost/content/media,type=bind,consistency=cached"
+        "source=${localWorkspaceFolder}/.devcontainer/devserver/data,target=/srv/www/ghost/content/data,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.devcontainer/devserver/files,target=/srv/www/ghost/content/files,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.devcontainer/devserver/images,target=/srv/www/ghost/content/images,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.devcontainer/devserver/media,target=/srv/www/ghost/content/media,type=bind,consistency=cached"
     ],
-    "workspaceMount": "source=${localWorkspaceFolder},target=/srv/ghost/content/themes/capitalist,type=bind",
-    "workspaceFolder": "/srv/ghost/content/themes/capitalist",
-    "postCreateCommand": "cd /srv/ghost/content/themes/capitalist && yarn install && cd /srv/ghost && ghost start",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/srv/www/ghost/content/themes/capitalist,type=bind",
+    "workspaceFolder": "/srv/www/ghost/content/themes/capitalist",
+    "postCreateCommand": "cd /srv/www/ghost/content/themes/capitalist && yarn install && cd /srv/www/ghost && ghost start",
     "remoteUser": "node"
 }
