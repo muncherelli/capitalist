@@ -1,8 +1,10 @@
 # Capitalist Ghost Theme
 
-A minimal ghost theme for a niche.
+A minimal themefor [Ghost](https://ghost.org/).
 
 &nbsp;
+
+-   You can safely ignore this warning: The engine "ghost" appears to be invalid.
 
 # PostCSS Features Used
 

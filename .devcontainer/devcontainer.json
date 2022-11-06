@@ -1,23 +1,33 @@
 {
-	"name": "Node.js",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": { "VARIANT": "16-bullseye" }
-	},
-	"customizations": {
-		"vscode": {
-			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": [
-				"dbaeumer.vscode-eslint"
-			]
-		}
-	},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [2368],
-
-	"postCreateCommand": "yarn install",
-
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "node"
+    "name": "ghost-capitalist-theme",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "bradlc.vscode-tailwindcss",
+                "lifeart.vscode-glimmer-syntax"
+            ]
+        }
+    },
+    "forwardPorts": [2368],
+    "portsAttributes": {
+        "2368": {
+            "label": "Ghost Dev Server",
+            "onAutoForward": "notify"
+        }
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder}/.devcontainer/devserver/data,target=/srv/ghost/content/data,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.devcontainer/devserver/files,target=/srv/ghost/content/files,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.devcontainer/devserver/images,target=/srv/ghost/content/images,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.devcontainer/devserver/media,target=/srv/ghost/content/media,type=bind,consistency=cached"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/srv/ghost/content/themes/capitalist,type=bind",
+    "workspaceFolder": "/srv/ghost/content/themes/capitalist",
+    "postCreateCommand": "cd /srv/ghost/content/themes/capitalist && yarn install && cd /srv/ghost && ghost start",
+    "remoteUser": "node"
 }
