@@ -23,4 +23,5 @@ projectFilesBackup
 
 dist/
 built/
-.devcontainer/data/ghost-local.db
+
+.devcontainer/devserver/data/ghost-local.db
