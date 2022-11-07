@@ -1,4 +1,7 @@
-<div class="w-1/5 [&>a>svg]:w-6">
+<div class="container mx-auto [&>a>svg]:w-6">
+    {{#if @custom.soundcloud_page}}
+    <a href="{{@custom.soundcloud_page}}" title="SoundCloud" target="_blank" rel="noopener">{{> "icons/soundcloud"}}</a>
+    {{/if}}
     {{#if @custom.tiktok_page}}
     <a href="{{@custom.tiktok_page}}" title="TikTok" target="_blank" rel="noopener">{{> "icons/tiktok"}}</a>
     {{/if}}
