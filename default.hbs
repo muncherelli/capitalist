@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     <title>{{meta_title}}</title>
-    {{ghost_head}}{{!-- Outputs important meta data and settings, should always be in <head> --}}
+    {{ghost_head}}{{!-- outputs important meta data and settings, should always be in <head> --}}
     <script>if ( localStorage.getItem("color-theme") === "dark" || (!("color-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) { document.documentElement.classList.add("dark"); } else { document.documentElement.classList.remove("dark"); }</script>
 </head>
 <body class="{{body_class}} overflow-x-hidden dark:bg-black/90 transition-colors duration-400">
@@ -26,13 +26,8 @@
             </div>
         </div>
     </div>
-    <div>
-        <div class="container mx-auto flex items-center">
-            <nav>
-                {{{navigation}}}
-            </nav>
-        </div>
-    </div>
+    {{{navigation}}}{{!-- Nav Row --}}
+    {{> socials }}
 </header>
 <main>
 {{{body}}}

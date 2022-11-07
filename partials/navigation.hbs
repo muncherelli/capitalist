@@ -1,5 +1,6 @@
+<nav class="container mx-auto flex items-center">
 {{#if isSecondary}}
-    <ul class="nav" role="menu">
+    <ul role="menu">
         {{#foreach navigation}}
             <li class="nav-{{slug}}" role="menuitem">
                 <a href="{{url}}">
@@ -24,3 +25,4 @@
         {{/foreach}}
     </ul>
 {{/if}}
+</nav>
