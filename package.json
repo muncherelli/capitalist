@@ -90,7 +90,7 @@
                 "type": "text",
                 "default": ""
             },
-            "instagram_page": {
+            "soundcloud_page": {
                 "type": "text",
                 "default": ""
             },
@@ -99,6 +99,10 @@
                 "default": ""
             },
             "youtube_page": {
+                "type": "text",
+                "default": ""
+            },
+            "instagram_page": {
                 "type": "text",
                 "default": ""
             }
