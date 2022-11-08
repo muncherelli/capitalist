@@ -28,6 +28,6 @@
     ],
     "workspaceMount": "source=${localWorkspaceFolder},target=/srv/www/ghost/content/themes/capitalist,type=bind",
     "workspaceFolder": "/srv/www/ghost/content/themes/capitalist",
-    "postCreateCommand": "cd /srv/www/ghost/content/themes/capitalist && yarn install && cd /srv/www/ghost && ghost start",
+    "postStartCommand": "cd /srv/www/ghost/content/themes/capitalist && yarn install && cd /srv/www/ghost && ghost start",
     "remoteUser": "node"
 }
