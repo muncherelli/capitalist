@@ -91,11 +91,19 @@ function zipper(done) {
 
 const cssWatcher = () =>
     watch(
-        ["assets/css/**", "*.hbs", "**/**/*.hbs", "!node_modules/**/*.hbs"],
+        [
+            "assets/css/**",
+            "*.hbs",
+            "**/**/*.hbs",
+            "!node_modules/**/*.hbs",
+            "tailwind.config.js",
+        ],
         css
     );
+
 const hbsWatcher = () =>
     watch(["*.hbs", "**/**/*.hbs", "!node_modules/**/*.hbs"], hbs);
+
 const watcher = parallel(cssWatcher, hbsWatcher);
 const build = series(css, js);
 const dev = series(build, serve, watcher);
