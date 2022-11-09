@@ -105,6 +105,10 @@
             "instagram_page": {
                 "type": "text",
                 "default": ""
+            },
+            "github_page": {
+                "type": "text",
+                "default": ""
             }
         }
     }
