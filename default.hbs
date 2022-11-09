@@ -11,11 +11,20 @@
 </head>
 <body class="{{body_class}} overflow-x-hidden dark:bg-black/90 lg:px-8 transition-colors duration-400">
 <header class="lg:container mx-auto">
-    <div class="flex border-b-[1px] border-b-black/20 dark:border-b-white/5 items-center">
-        <div class="w-1/5">
+    <div class="flex flex-wrap border-b-[1px] border-b-black/20 dark:border-b-white/5">
+        <div class="w-1/5 lg:w-1/3 [&>button>svg]:w-6 [&>button>svg]:h-6 lg:[&>button>svg]:w-4 lg:[&>button>svg]:h-4 border-b-2 border-b-red-600">
             <button id="menu-toggle" type="button" class="text-[#010000] dark:text-white/30 hover:bg-black/10 dark:hover:bg-white/10 lg:rounded-lg text-sm p-2.5 transition-colors duration-300 justify-self-end">
                 {{> "icons/hamburger"}}
             </button>
+        </div>
+        <div class="hidden lg:inline w-1/3 [&>a>svg]:inline [&>a>svg]:w-4 [&>a]:w-4 [&>a]:pl-5 first:[&>a]:pl-0 text-center border-b-2 border-b-red-600">
+            {{> socials }}
+        </div>
+        <div class="hidden lg:inline w-1/3 text-right border-b-2 border-b-red-600">
+            Subscribe
+        </div>
+        <div class="hidden lg:inline w-1/5">
+            Test
         </div>
         <div class="w-3/5 text-center">
             <h1 class="font-display select-none text-[#010000] dark:text-white/95 text-[1.75rem] md:text-[2.25rem] lg:text-[4rem] xl:text-[5rem] 2xl:text-[6rem] leading-relaxed md:leading-snug lg:leading-tight"><a href="{{@site.url}}">{{@site.title}}</a></h1>
@@ -28,7 +37,7 @@
         </div>
     </div>
     {{{navigation}}}{{!-- Nav Row --}}
-    {{> socials }}
+    
 </header>
 <main>
 {{{body}}}
