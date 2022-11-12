@@ -3,14 +3,20 @@
             {{#if @custom.soundcloud_page}}
             <a href="{{@custom.soundcloud_page}}" title="SoundCloud" target="_blank" rel="noopener">{{> "icons/soundcloud"}}</a>
             {{/if}}
+            {{#if @site.facebook}}
+            <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+            {{/if}}
+            {{#if @custom.instagram_page}}
+            <a href="{{@custom.instagram_page}}" title="Instagram" target="_blank" rel="noopener">{{> "icons/instagram"}}</a>
+            {{/if}}
+            {{#if @site.twitter}}
+            <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+            {{/if}}
             {{#if @custom.tiktok_page}}
             <a href="{{@custom.tiktok_page}}" title="TikTok" target="_blank" rel="noopener">{{> "icons/tiktok"}}</a>
             {{/if}}
             {{#if @custom.youtube_page}}
             <a href="{{@custom.youtube_page}}" title="YouTube" target="_blank" rel="noopener">{{> "icons/youtube"}}</a>
-            {{/if}}
-            {{#if @site.twitter}}
-            <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
             {{/if}}
             {{#if @custom.github_page}}
             <a href="{{@custom.github_page}}" title="TikTok" target="_blank" rel="noopener">{{> "icons/github"}}</a>
