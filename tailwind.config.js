@@ -4,7 +4,8 @@ module.exports = {
     darkMode: "class",
     theme: {
         fontFamily: {
-            display: ["Chomsky"],
+            sans: ["Libre Franklin"],
+            display: ["Libre Franklin"],
         },
         extend: {},
         screens: {
