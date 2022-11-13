@@ -5,7 +5,7 @@ module.exports = {
     theme: {
         fontFamily: {
             logo: ["Chomsky"],
-            sans: ["Open Sans"],
+            sans: ["Open Sans", "Arial", "system-ui"],
             serif: ["Georgia", "Times New Roman", "serif"],
             display: ["Open Sans"],
             body: ["Open Sans"],
