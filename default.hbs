@@ -7,20 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     <title>{{meta_title}}</title>
     {{ghost_head}}{{!-- outputs important meta and settings, should always be in <head> --}}   
 </head>
 <body class="{{body_class}} overflow-x-hidden dark:bg-black/90 transition-colors duration-400">
-<header class="desktop:container desktop:mx-auto desktop:pt-1 desktop:px-8">
-    <div class="flex flex-wrap border-b-[1px] border-b-black/20 dark:border-b-white/5">
-        <div class="flex w-1/5 desktop:w-1/3 tablet:pl-1 desktop:p-0 space-x-1 [&>button]:text-[#010000] [&>button]:dark:text-white/30 [&>button]:tablet:rounded-lg [&>button>svg]:w-6 [&>button>svg]:h-6 desktop:[&>button>svg]:w-4 desktop:[&>button>svg]:h-4 items-center">
-            <button id="menu-toggle" type="button" class="hover:bg-black/5 dark:hover:bg-white/5 p-2.5 transition-colors duration-300">
+<header class="desktop:container desktop:mx-auto desktop:pt-1 desktop:px-10">
+    <div class="flex flex-wrap border-b-[1px] border-b-black/10 dark:border-b-white/5">
+        <div class="flex w-1/5 desktop:w-1/3 tablet:pl-1 desktop:p-0 space-x-1
+            [&>button]:text-[#010000] [&>button]:dark:text-white/30 [&>button]:tablet:rounded
+            [&>button>svg]:w-6 [&>button>svg]:h-6
+            desktop:[&>button>svg]:w-4 desktop:[&>button>svg]:h-4
+            xl:[&>button>svg]:w-5 xl:[&>button>svg]:h-5
+            2xl:[&>button>svg]:w-6 2xl:[&>button>svg]:h-6
+            3xl:[&>button>svg]:w-7 3xl:[&>button>svg]:h-7
+            items-center">
+            <button id="menu-toggle" type="button" class="hover:bg-black/5 dark:hover:bg-white/5 p-2 transition-colors duration-300">
                 {{> "icons/hamburger"}}
 
             </button>{{!-- That odd empty space is intentional as a hack for proper indention. To-Do: Fix this --}}
-            <button id="search-modal-button" type="button" onclick="window.location.href='#/search';" class="hidden tablet:inline hover:bg-black/5 dark:hover:bg-white/5 p-2.5 transition-colors duration-300">
+            <button id="search-modal-button" type="button" onclick="window.location.href='#/search';" class="hidden tablet:inline hover:bg-black/5 dark:hover:bg-white/5 p-2 transition-colors duration-300">
                 {{> "icons/search"}}
 
             </button>{{!-- That odd empty space is intentional as a hack for proper indention. To-Do: Fix this --}}
@@ -28,16 +35,18 @@
         {{!-- Header Space Above Logo --}}
         <div class="hidden desktop:flex w-1/3 text-center"></div>
         {{!-- Socials, visible only >=desktop --}}
-        <div class="hidden desktop:flex w-1/3 items-center justify-end space-x-4 [&>a]:flex [&>a]:w-3 [&>a]:h-3 xl:[&>a]:w-4 xl:[&>a]:h-4 2xl:[&>a]:w-5 2xl:[&>a]:h-5 [&>a>svg]:inline [&>a>svg]:fill-black/75 [&>a>svg]:dark:fill-white/75">{{> socials }}
+        <div class="hidden desktop:flex w-1/3 items-center justify-end [&>a]:flex [&>a]:p-2 [&>a>svg]:w-3 [&>a>svg]:h-3 xl:[&>a>svg]:w-4 xl:[&>a>svg]:h-4 2xl:[&>a>svg]:w-5 2xl:[&>a>svg]:h-5 3xl:[&>a>svg]:w-6 3xl:[&>a>svg]:h-6 [&>a>svg]:inline [&>a>svg]:fill-black/25 [&>a>svg]:dark:fill-white/75">{{> socials }}
         </div>
+        {{!-- Left Space --}}
         <div class="hidden desktop:flex w-1/5 items-center">
             <a href="#/portal/subscribe">Subscribe</a>
         </div>
+        {{!-- Logo --}}
         <div class="w-3/5 text-center">
-            <h1 class="font-[Chomsky] select-none text-[#010000] dark:text-white/95 text-[1.75rem] tablet:text-[2.25rem] desktop:text-[4rem] xl:text-[5rem] 2xl:text-[6rem] leading-relaxed tablet:leading-snug desktop:leading-tight"><a href="{{@site.url}}">{{@site.title}}</a></h1>
+            <h1 class="inline-block font-logo tracking-tight select-none text-[#010000] dark:text-white/95 text-[1.75rem] tablet:text-[2.25rem] desktop:text-[4rem] xl:text-[5rem] 2xl:text-[6rem] leading-relaxed tablet:leading-snug desktop:leading-tight"><a href="{{@site.url}}">{{@site.title}}</a></h1>
         </div>
-        <div class="flex w-1/5 text-right px-1 desktop:p-0 items-center justify-end">
-            <button id="theme-toggle" type="button" class="hover:bg-black/5 dark:hover:bg-white/5 [&>svg]:fill-black/75 [&>svg]:dark:fill-white/75 tablet:rounded-lg text-sm p-2.5 transition-colors duration-300 justify-self-end">
+        <div class="flex w-1/5 text-right desktop:p-0 items-center justify-end">
+            <button id="theme-toggle" type="button" class="hover:bg-black/5 dark:hover:bg-white/5 [&>svg]:fill-black/75 [&>svg]:dark:fill-white/75 tablet:rounded text-sm p-2.5 transition-colors duration-300 justify-self-end">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" id="theme-toggle-light-icon" class="w-6 xl:w-8 h-6 xl:h-8 hidden"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" /></svg>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" id="theme-toggle-dark-icon" class="w-6 xl:w-8 h-6 xl:h-8 hidden"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd" /></svg>
             </button>
