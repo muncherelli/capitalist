@@ -10,4 +10,4 @@ RUN mkdir -p /srv/www/ghost && chown node:node /srv/www/ghost && npm install gho
 # install ghost as node user
 USER node
 RUN cd /srv/www/ghost && ghost install local
-RUN echo 'echo "command: yarn dev|build"' >> /home/node/.bashrc
+RUN echo 'echo "run: yarn dev to develop or yarn zip to build zip in /dist"' >> /home/node/.bashrc
