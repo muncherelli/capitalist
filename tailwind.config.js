@@ -4,8 +4,11 @@ module.exports = {
     darkMode: "class",
     theme: {
         fontFamily: {
-            sans: ["Libre Franklin"],
-            display: ["Libre Franklin"],
+            logo: ["Chomsky"],
+            sans: ["Open Sans"],
+            serif: ["Georgia", "Times New Roman", "serif"],
+            display: ["Open Sans"],
+            body: ["Open Sans"],
         },
         extend: {},
         screens: {
