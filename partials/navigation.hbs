@@ -1,30 +1,25 @@
-<div class="border-b-[1px] border-b-black/80 dark:border-b-white/5 pb-[2px]">
-<nav class="flex items-center border-b-[1px] border-b-black/80 dark:border-b-white/5 px-1 py-1">
+
 {{#if isSecondary}}
-    <ul role="menu">
+<nav class="flex text-xs tracking-tight items-center border-b-[1px] desktop:border-b-black/80 desktop:dark:border-b-white/5 px-1 py-2 desktop:px-12">
         {{#foreach navigation}}
-            <li class="nav-{{slug}}" role="menuitem">
-                <a href="{{url}}">
-                    <svg class="icon" role="img" aria-label="{{slug}} icon">
-                        <title>{{slug}}</title>
-                        <use xlink:href="#{{slug}}"></use>
-                    </svg>
-                </a>
-            </li>
+        <a href="{{url}}" class="nav-{{slug}}" role="menuitem">
+            <svg class="icon" role="img" aria-label="{{slug}} icon">
+                <title>{{slug}}</title>
+                <use xlink:href="#{{slug}}"></use>
+            </svg>
+        </a>
         {{/foreach}}
-    </ul>
-{{else}}
-    <ul class="nav" role="menu">
-        {{#foreach navigation}}
-            <li
-                class="inline
-                    {{link_class for=(url) class=(concat "nav-" slug)}}"
-                role="menuitem"
-            >
-                <a href="{{url absolute="true"}}">{{label}}</a>
-            </li>
-        {{/foreach}}
-    </ul>
-{{/if}}
 </nav>
+{{else}}
+<nav class="flex font-medium text-xs tracking-tighter items-center border-b-[1px] desktop:border-b-black/80 desktop:dark:border-b-white/5 px-1 py-2 desktop:px-6">
+    <ul class="nav flex space-x-3" role="menu">
+        {{#foreach navigation}}
+        <li class="inline {{link_class for=(url) class=(concat "nav-" slug)}}" role="menuitem">
+            <a href="{{url absolute="true"}}">{{label}}</a>
+        </li>
+        {{/foreach}}
+    </ul>
+</nav>
+{{/if}}
+<div class="desktop:border-b-[1px] desktop:border-b-black/80 desktop:dark:border-b-white/5 desktop:pb-[2px]">
 </div>
