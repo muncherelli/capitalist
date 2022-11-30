@@ -3,38 +3,52 @@
     <div class="desktop:container mx-auto desktop:px-10">
         <article class="{{post_class}}">
             <header>
-            {{#if tags}}
-                <div class="[&>a]:mr-2 [&>a]:text-black/80 dark:[&>a]:text-white/80 text-xs xl:text-base 2xl:text-lg 3xl:text-xl">
-                {{#foreach tags}}
-                    <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}} first:uppercase before:content-['#'] first:before:content-none">{{name}}</a>
-                {{/foreach}}
-                </div>
-            {{/if}}
-                <span><time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at timeago="true"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-                <h1 class="font-['Noticia_Text']">{{title}}</h1>
-                {{#if custom_excerpt}}
-                <p>{{custom_excerpt}}</p>
-                {{/if}}
-                {{#if feature_image}}
-                <figure>
-                    <img class="desktop:rounded"
-                        srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
-                        sizes="(max-width: 1000px) 1000px, 2000px"
-                        loading="lazy"
-                        src="{{img_url feature_image size="xl"}}"
-                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
-                    {{#if feature_image_caption}}
-                    <figcaption>{{feature_image_caption}}</figcaption>
-                    {{/if}}
-                </figure>
-                {{/if}}
+                <style>
+                    .post-header-image {
+                        background-image: url({{img_url feature_image size="m"}});
+                    }
+                    @media (min-width: 768px) {
+                        .post-header-image {
+                            background-image: url({{img_url feature_image size="l"}});
+                        }
+                    }
+                    @media (min-width: 1024px) {
+                        .post-header-image {
+                            background-image: url({{img_url feature_image size="xl"}});
+                        }
+                    }
+                </style>
+                <div class="post-header-image h-48 2xl:h-72 3xl:h-80 bg-cover bg-center">
+                    <div class="h-full flex items-end bg-white/75 dark:bg-black/80">
+                        <div>
+                            <h1 class="font-['Noticia_Text'] text-4xl 2xl:text-6xl 3xl:text-7xl text-black dark:text-white font-bold 2xl:pl-6 2xl:pb-3">
+                                <a href="{{url absolute="true"}}">{{title}}</a>
+                            </h1>
+                            {{#if tags}}
+                            <div class="hidden tablet:flex pl-4 pb-2 2xl:pl-6 2xl:pb-4 [&>a]:mr-2 [&>a]:text-black/80 dark:[&>a]:text-white/80 text-xs xl:text-base 2xl:text-lg 3xl:text-xl 3xl:space-x-5">
+                                {{#foreach tags}}
+                                <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}} hover:underline first:text-black dark:first:text-white first:uppercase before:content-['#'] first:before:content-none">{{name}}</a>
+                                {{/foreach}}
+                            </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>                           
             </header>
-            <div class="prose dark:prose-invert tablet:prose-lg desktop:prose-xl max-w-none [&>h2]:px-4 desktop:[&>h2]:p-0 [&>h3]:px-4 desktop:[&>h3]:p-0 [&>p]:px-4 desktop:[&>p]:p-0 desktop:[&>figure>img]:rounded">
-                {{content}}
+            <div class="flex">
+                <div class="w-full tablet:w-4/5 prose dark:prose-invert tablet:prose-lg desktop:prose-xl max-w-none [&>h2]:px-4 desktop:[&>h2]:p-0 [&>h3]:px-4 desktop:[&>h3]:p-0 [&>p]:px-4 desktop:[&>p]:p-0 desktop:[&>figure>img]:rounded">
+                    <span><time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at timeago="true"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+                    {{#if custom_excerpt}}
+                    <p>{{custom_excerpt}}</p>
+                    {{/if}}
+                    {{content}}
+                </div>
+                <div class="w-full tablet:w-1/5 -mt-10 -pb-10">
+                    <p class="text-black dark:text-white">Side</p>
+                </div>
             </div>
+
+            
             <footer>
                 {{!-- <div class="gh-post-authors">
                     Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
