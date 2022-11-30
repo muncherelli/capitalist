@@ -1,13 +1,13 @@
 <header class="desktop:container desktop:mx-auto desktop:pt-1 desktop:px-10">
     <div class="flex flex-wrap border-b-[1px] border-b-black/10 dark:border-b-white/30">
         <div class="flex w-1/5 desktop:w-1/3 tablet:pl-1 desktop:p-0 space-x-1
-            [&>button]:text-[#010000] [&>button]:dark:text-white/30 [&>button]:tablet:rounded
-            [&>button>svg]:w-6 [&>button>svg]:h-6
-            desktop:[&>button>svg]:w-4 desktop:[&>button>svg]:h-4
-            xl:[&>button>svg]:w-5 xl:[&>button>svg]:h-5
-            2xl:[&>button>svg]:w-6 2xl:[&>button>svg]:h-6
-            3xl:[&>button>svg]:w-7 3xl:[&>button>svg]:h-7
-            items-center">
+          [&>button]:text-[#010000] [&>button]:dark:text-white/30 [&>button]:tablet:rounded
+          [&>button>svg]:w-6 [&>button>svg]:h-6
+          desktop:[&>button>svg]:w-4 desktop:[&>button>svg]:h-4
+          xl:[&>button>svg]:w-5 xl:[&>button>svg]:h-5
+          2xl:[&>button>svg]:w-6 2xl:[&>button>svg]:h-6
+          3xl:[&>button>svg]:w-7 3xl:[&>button>svg]:h-7
+          items-center">
             <button id="menu-toggle" type="button" class="hover:bg-black/5 dark:hover:bg-white/5 p-2 transition-colors duration-300">
                 {{> "icons/hamburger"}}
 
@@ -21,14 +21,14 @@
         <div class="hidden desktop:flex w-1/3 text-center"></div>
         {{!-- Socials, visible only >=desktop --}}
         <div class="hidden desktop:flex w-1/3
-            items-center justify-end
-            [&>a]:flex [&>a]:p-2
-            [&>a>svg]:inline
-            [&>a>svg]:w-3 [&>a>svg]:h-3
-            xl:[&>a>svg]:w-4 xl:[&>a>svg]:h-4
-            2xl:[&>a>svg]:w-5 2xl:[&>a>svg]:h-5
-            3xl:[&>a>svg]:w-6 3xl:[&>a>svg]:h-6
-             [&>a>svg]:fill-black/25 [&>a>svg]:dark:fill-white/75">{{> socials }}
+          items-center justify-end
+          [&>a]:flex [&>a]:p-2
+          [&>a>svg]:inline
+          [&>a>svg]:w-3 [&>a>svg]:h-3
+          xl:[&>a>svg]:w-4 xl:[&>a>svg]:h-4
+          2xl:[&>a>svg]:w-5 2xl:[&>a>svg]:h-5
+          3xl:[&>a>svg]:w-6 3xl:[&>a>svg]:h-6
+          [&>a>svg]:fill-black/25 [&>a>svg]:dark:fill-white/75">{{> socials }}
         </div>
         {{!-- Left Space --}}
         <div class="hidden desktop:flex w-1/5 items-center">
@@ -45,5 +45,4 @@
             </button>
         </div>
     </div>
-{{{navigation}}}{{!-- Nav Row --}}
-</header>
+{{{navigation}}}</header>
