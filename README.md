@@ -1,10 +1,6 @@
 # Capitalist Ghost Theme
 
-A minimal themefor [Ghost](https://ghost.org/).
-
-&nbsp;
-
--   You can safely ignore this warning: The engine "ghost" appears to be invalid.
+A minimal theme for [Ghost](https://ghost.org/).
 
 # PostCSS Features Used
 
