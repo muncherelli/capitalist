@@ -18,16 +18,16 @@
                         }
                     }
                 </style>
-                <div class="post-header-image h-48 2xl:h-72 3xl:h-80 bg-cover bg-center">
-                    <div class="h-full flex items-end bg-white/75 dark:bg-black/80">
+                <div class="post-header-image h-48 2xl:h-72 3xl:h-80 bg-cover bg-center bg-white/80 dark:bg-[#111]/90 bg-blend-saturation">
+                    <div class="h-full flex items-end">
                         <div>
-                            <h1 class="font-['Noticia_Text'] text-4xl 2xl:text-6xl 3xl:text-7xl text-black dark:text-white font-bold 2xl:pl-6 2xl:pb-3">
+                            <h1 class="font-['Noticia_Text'] text-4xl 2xl:text-6xl 3xl:text-7xl text-black dark:text-white font-bold pl-4 pb-2 2xl:pl-6 2xl:pb-3 3xl:pl-8 3xl:pb-4">
                                 <a href="{{url absolute="true"}}">{{title}}</a>
                             </h1>
                             {{#if tags}}
-                            <div class="hidden tablet:flex pl-4 pb-2 2xl:pl-6 2xl:pb-4 [&>a]:mr-2 [&>a]:text-black/80 dark:[&>a]:text-white/80 text-xs xl:text-base 2xl:text-lg 3xl:text-xl 3xl:space-x-5">
+                            <div class="hidden tablet:flex pl-4 pb-3 2xl:pl-6 2xl:pb-4 3xl:pl-8 3xl:pb-6 [&>a]:mr-2 [&>a]:text-black/80 dark:[&>a]:text-white/80 text-xs xl:text-base 2xl:text-lg 3xl:text-xl 3xl:space-x-5">
                                 {{#foreach tags}}
-                                <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}} hover:underline first:text-black dark:first:text-white first:uppercase before:content-['#'] first:before:content-none">{{name}}</a>
+                                <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}} hover:underline first:font-bold first:text-black dark:first:text-white first:uppercase before:content-['#'] first:before:content-none">{{name}}</a>
                                 {{/foreach}}
                             </div>
                             {{/if}}
@@ -36,7 +36,7 @@
                 </div>                           
             </header>
             <div class="flex">
-                <div class="w-full tablet:w-4/5 prose dark:prose-invert tablet:prose-lg desktop:prose-xl max-w-none [&>h2]:px-4 desktop:[&>h2]:p-0 [&>h3]:px-4 desktop:[&>h3]:p-0 [&>p]:px-4 desktop:[&>p]:p-0 desktop:[&>figure>img]:rounded">
+                <div class="w-full tablet:w-4/5 font-serif prose dark:prose-invert tablet:prose-lg desktop:prose-xl max-w-none [&>h2]:px-4 desktop:[&>h2]:p-0 [&>h3]:px-4 desktop:[&>h3]:p-0 [&>p]:px-4 desktop:[&>p]:p-0 desktop:[&>figure>img]:rounded">
                     <span><time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at timeago="true"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
                     {{#if custom_excerpt}}
                     <p>{{custom_excerpt}}</p>
@@ -44,7 +44,7 @@
                     {{content}}
                 </div>
                 <div class="w-full tablet:w-1/5 -mt-10 -pb-10">
-                    <p class="text-black dark:text-white">Side</p>
+                    <p class="text-black dark:text-white"></p>
                 </div>
             </div>
 
