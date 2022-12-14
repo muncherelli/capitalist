@@ -6,12 +6,13 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "dbaeumer.vscode-eslint",
-                "esbenp.prettier-vscode",
-                "bradlc.vscode-tailwindcss",
-                "lifeart.vscode-glimmer-syntax",
-                "christian-kohler.path-intellisense"
-            ]
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"bradlc.vscode-tailwindcss",
+				"lifeart.vscode-glimmer-syntax",
+				"christian-kohler.path-intellisense",
+				"GitHub.copilot"
+			]
         }
     },
     "forwardPorts": [2368],
